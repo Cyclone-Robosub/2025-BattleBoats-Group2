@@ -6,8 +6,8 @@
 // ==============================
 //       Pin configuration
 // ==============================
-#define TRIG_PIN 51 //2
-#define ECHO_PIN 53 //3
+#define TRIG_PIN 2 //2 formly 51
+#define ECHO_PIN 3 //3 formly 53
 
 void ultrasonicInit();
 float readDistanceCM();

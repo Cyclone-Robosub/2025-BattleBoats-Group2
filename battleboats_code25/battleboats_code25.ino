@@ -1,6 +1,5 @@
 #include "motors.h"
 #include "ultrasonic.h"
-#include "logic.h"
 
 void setup() {
   Serial.begin(9600);
