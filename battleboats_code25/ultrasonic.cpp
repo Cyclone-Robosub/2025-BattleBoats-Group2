@@ -11,14 +11,14 @@ void ultrasonicInit() {
 
 //only use below when front senses something
 bool interpret() {
-  bool right = false;
+  bool right;
   if(readDistanceLeft() <= 15) {
-    bool right = true; // turn right
+    right = true; // turn right
   }
   else {
-    bool right = false; // turn left
+    right = false; // turn left
   }
-  return bool right;
+  return right;
 }
 
 float readDistanceLeft() {
