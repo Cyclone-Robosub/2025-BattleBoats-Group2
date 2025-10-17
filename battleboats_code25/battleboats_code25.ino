@@ -17,6 +17,13 @@ void loop() {
     driveForward(150);
   } else {
     driveStop();
+    turn = interpret();
+
+    if (turn == true) {
+      turnRight();
+    } else {
+      turnLeft();
+    }
   }
 
   delay(100);
