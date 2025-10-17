@@ -11,12 +11,14 @@ void ultrasonicInit() {
 
 //only use below when front senses something
 bool interpret() {
+  bool right = false;
   if(readDistanceLeft() <= 15) {
-    turnRight = true // turn right
+    bool right = true; // turn right
   }
-  else
-    turnRight = false; // turn left
-  return turnRight;
+  else {
+    bool right = false; // turn left
+  }
+  return bool right;
 }
 
 float readDistanceLeft() {
@@ -29,7 +31,7 @@ float readDistanceLeft() {
   digitalWrite(TRIG_PIN2, LOW);
 
   // Measure microseconds taken for sound to send and bounce back
-  long duration_us = pulseIn(ECHO_PIN1, HIGH);
+  long duration_us = pulseIn(ECHO_PIN2, HIGH);
 
   // distance = time * speed of sound
   // speed of sound in cm / uS = 0.0343

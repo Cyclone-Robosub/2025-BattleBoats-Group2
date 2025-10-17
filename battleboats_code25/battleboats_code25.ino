@@ -17,12 +17,12 @@ void loop() {
     driveForward(150);
   } else {
     driveStop();
-    turn = interpret();
+    bool turn = interpret();
 
     if (turn == true) {
-      turnRight();
+      turnRight(15);
     } else {
-      turnLeft();
+      turnLeft(15);
     }
   }
 
