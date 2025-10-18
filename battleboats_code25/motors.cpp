@@ -13,15 +13,16 @@ void motorInit() {
   pinMode(ENB_PIN, OUTPUT);
   driveStop();
 }
-
+int turning_time = 1000;
 // ==============================
 //         Motor control
 // ==============================
 void driveForward(int speed) {
   digitalWrite(IN1_PIN, HIGH);
-  digitalWrite(IN2_PIN, LOW);
+  digitalWrite(IN2_PIN, HIGH);
   digitalWrite(IN3_PIN, HIGH);
-  digitalWrite(IN4_PIN, LOW);
+  digitalWrite(IN4_PIN, HIGH);
+  //Serial.print("Moving Forward");
 
   analogWrite(ENA_PIN, speed);
   analogWrite(ENB_PIN, speed);
@@ -38,13 +39,15 @@ void driveBackward(int speed) {
 }
 
 void turnLeft(int speed) {
-  digitalWrite(IN1_PIN, LOW);
-  digitalWrite(IN2_PIN, HIGH);
+  digitalWrite(IN1_PIN, HIGH);
+  digitalWrite(IN2_PIN, LOW);
   digitalWrite(IN3_PIN, HIGH);
   digitalWrite(IN4_PIN, LOW);
 
   analogWrite(ENA_PIN, speed);
   analogWrite(ENB_PIN, speed);
+  delay(turning_time);
+  driveStop();
 }
 
 void turnRight(int speed) {
@@ -55,6 +58,9 @@ void turnRight(int speed) {
 
   analogWrite(ENA_PIN, speed);
   analogWrite(ENB_PIN, speed);
+  delay(turning_time);
+  driveStop();
+
 }
 
 void driveStop() {

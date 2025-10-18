@@ -6,10 +6,10 @@
 // ==============================
 //       Pin configuration
 // ==============================
-#define IN1_PIN 4
-#define IN2_PIN 5
-#define IN3_PIN 6
-#define IN4_PIN 7
+#define IN1_PIN 4 // Left Motor
+#define IN2_PIN 5 // Left Motor
+#define IN3_PIN 6 // Right Motor
+#define IN4_PIN 7 // Right Motor
 #define ENA_PIN 10   // Pin must support PWM!
 #define ENB_PIN 111  // Pin must support PWM!
 
